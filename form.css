@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+}
+
+header {
+    background: linear-gradient(135deg, #0061f2 0%, #00c6f9 100%);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0061f2, #00c6f9);
+    border-radius: 2px;
+}
+
+form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form input[type="time"],
+form select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+form input:hover,
+form select:hover {
+    border-color: #0061f2;
+    background-color: #fff;
+}
+
+form input:focus,
+form select:focus {
+    outline: none;
+    border-color: #0061f2;
+    box-shadow: 0 0 0 4px rgba(0,97,242,0.15);
+    background-color: #fff;
+}
+
+form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%232d3748' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.form-buttons button,
+.form-buttons a {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-buttons button {
+    background: linear-gradient(135deg, #0061f2 0%, #00c6f9 100%);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,97,242,0.2);
+}
+
+.form-buttons a {
+    background: #64748b;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(100,116,139,0.2);
+}
+
+.form-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,97,242,0.3);
+}
+
+.form-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(100,116,139,0.3);
+}
+
+.form-buttons button:active,
+.form-buttons a:active {
+    transform: translateY(-1px);
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message::before {
+    content: '⚠️';
+}
+
+form label.required::after {
+    content: "*";
+    color: #ef4444;
+    margin-left: 6px;
+    font-size: 1rem;
+}
+
+footer {
+    background: linear-gradient(135deg, #0061f2 0%, #00c6f9 100%);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="date"],
+    form input[type="time"],
+    form select {
+        font-size: 16px;
+    }
+}
+
+/* Loading Animation */
+.form-buttons button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.form-buttons button.loading::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0 0 -12px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 6px;
+    border: 3px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Input Group Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group label {
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    padding: 0 0.5rem;
+    background: #fff;
+    color: #0061f2;
+    font-size: 0.9rem;
+}
+
+/* Success State */
+.success-message {
+    color: #10b981;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.success-message::before {
+    content: '✓';
+} 
